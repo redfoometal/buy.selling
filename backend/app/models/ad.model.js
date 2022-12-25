@@ -8,21 +8,19 @@
 // - Автор объявления. Обязательное. Ссылка на сущность «Пользователь».
 // - Категории. Обязательное. Ссылка на сущность «Категория». Объявление может принадлежать к нескольким категориям.
 
-module.exports = mongoose => {
-    const ad = mongoose.model(
-        'ad',
-        mongoose.Schema({
-            name: String,
-            discription: String,
-            photo: String,
-            type_ad: String,
-            amount_coments: Number,
-            price: Number,
-            author: String,
-            category: String,
-        },{
-            timestamp: true
-        }))
+const mongoose = require('mongoose');
+
+const Ad_Schema = mongoose.Schema({
+    name: String,
+    discription: String,
+    photo: String,
+    type_ad: String,
+    amount_coments: Number,
+    price: Number,
+    author: String,
+    category: String,
+},{
+    timestamp: true
+})
     
-    return ad;
-}
+module.exports = mongoose.model('ad', Ad_Schema);

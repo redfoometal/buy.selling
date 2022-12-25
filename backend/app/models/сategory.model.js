@@ -2,14 +2,12 @@
 // - Изображение для категории. Обязательное. Путь к изображению.
 // - Количество объявлений. Рассчитывается автоматически.
 
-module.exports = mongoose =>{
-    const Category = mongoose.model(
-        'Category',
-        mongoose.Schema({
-            name: String,
-            img: String,
-            amount_ad: Number
-        }))
+const mongoose = require('mongoose');
 
-    return Category;
-}
+const Category_Schema = mongoose.Schema({
+    name: String,
+    img: String,
+    amount_ad: Number
+})
+
+module.exports = mongoose.model('category', Category_Schema);
