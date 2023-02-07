@@ -10,4 +10,4 @@ const Category_Schema = mongoose.Schema({
     amount_ad: Number
 })
 
-module.exports = mongoose.model('category', Category_Schema);
+module.exports = mongoose.model('Category', Category_Schema);

@@ -8,4 +8,4 @@ const Coments_Schema = mongoose.Schema({
     author: String
 })
 
-module.exports = mongoose.model('coments', Coments_Schema);
+module.exports = mongoose.model('Coments', Coments_Schema);

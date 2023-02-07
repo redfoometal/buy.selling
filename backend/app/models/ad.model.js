@@ -13,14 +13,24 @@ const mongoose = require('mongoose');
 const Ad_Schema = mongoose.Schema({
     name: String,
     discription: String,
+    created: { 
+        type: Date,
+        default: Date.now
+    },
     photo: String,
     type_ad: String,
     amount_coments: Number,
     price: Number,
-    author: String,
-    category: String,
+    user: { 
+    	type: mongoose.Schema.Types.ObjectId, 
+    	ref: 'Users' 
+    },
+    category: { 
+    	type: mongoose.Schema.Types.ObjectId,
+    	ref: 'Category' 
+    },
 },{
     timestamp: true
 })
     
-module.exports = mongoose.model('ad', Ad_Schema);
+module.exports = mongoose.model('Ad', Ad_Schema);
